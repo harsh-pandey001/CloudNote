@@ -6,8 +6,10 @@ const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
 const JWT_SECRET = 'Harshisgoodboy'
-// create a User using: POST "/api/auth/createuser"//No login required
 
+
+
+//ROUTE 1: create a User using: POST "/api/auth/createuser"//No login required
 router.post('/createuser',[
     body('name','Enter a valid Name').isLength({ min: 3 }),
     body('email','Enter a valid E-mail').isEmail(),
@@ -49,5 +51,64 @@ router.post('/createuser',[
         res.status(500).send("Some error occures");
       }
 })
+
+
+
+
+//ROUTE 2: Authenticate a User using: POST "/api/auth/createuser"//No login required
+router.post('/login',[
+
+  body('email','Enter a valid E-mail').isEmail(),
+  body('password','Password cannot be blank').exists(),
+
+], async (req, res)=>{
+//if there are errors, return bad request and errors
+const errors = validationResult(req);
+if (!errors.isEmpty()) {
+  return res.status(400).json({ errors: errors.array() });
+}
+
+const {email, password} = req.body;
+try {
+  let user = await User.findOne({email})
+ if (!user) {
+  return res.status(400).json({error: "please try to login with correct credentials"});
+
+ } 
+ const passwordCompare = await bcrypt.compare(password,user.password);
+ if (!passwordCompare) {
+  return res.status(400).json({error: "please try to login with correct credentials"});
+ }
+ const data = {
+  user:{
+    id: user.id
+  }
+}
+const authtoken =  jwt.sign(data, JWT_SECRET);
+res.json({authtoken})
+
+} catch (error) {
+  console.error(error.message);
+  res.status(500).send("Internal server occur");
+}
+})
+
+
+
+//ROUTE 3: Get loggedin User Details using: POST "/api/auth/getuser"//Login required
+
+router.post('/login',fetchuser, async (req, res)=>{
+try {
+  userId = "todo";
+  const user = await User.findById(userid).select("-password")
+
+} catch (error) {
+  console.error(error.message);
+  res.status(500).send("Internal server occur");
+}
+})
+
+
+
 
 module.exports = router
