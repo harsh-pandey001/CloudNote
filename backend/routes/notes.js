@@ -15,7 +15,7 @@ router.get("/fetchallnotes", fetchuser, async (req, res) => {
   }
 });
 
-//ROUTE 2: Add a new Note using: GPOST "/api/notes/addnote"//Login required
+//ROUTE 2: Add a new Note using: POST "/api/notes/addnote"//Login required
 router.post(
   "/addnote",
   fetchuser,
@@ -46,4 +46,34 @@ router.post(
   }
 );
 
+//ROUTE 3: Update an existing Note using: POST "/api/notes/updatenote"//Login required
+
+router.put("/updatenote/:id", fetchuser, async (req, res) => {
+  const { title, description, tag } = req.body;
+
+  // Create anewNote object
+
+  const newNote = {};
+  if (title) {
+    newNote.title = title;
+  }
+  if (description) {
+    newNote.description = description;
+  }
+  if (tag) {
+    newNote.title = title;
+  }
+
+  // find the note to be updated and update it
+  let note = await Note.findById(req.params.id);
+  if (!note) {
+    res.status(404).send("Note Found");
+  }
+  if (note.user.toString() !== req.user.id) {
+    return res.status(401).send("Not Allowed");
+  }
+
+  note =  await Note.findByIdAndUpdate(req.params.id , {$set: newNote}, {new : true})
+  res.json({note});
+});
 module.exports = router;
