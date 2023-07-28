@@ -1,9 +1,10 @@
-import React from 'react'
+import { useContext, useEffect } from 'react'
+import noteContext from '../context/notes/noteContext';
 
 const About = () => {
   return (
     <div>
-      This is about Page of the about section
+      This is About Page 
     </div>
   )
 }
