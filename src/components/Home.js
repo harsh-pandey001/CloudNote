@@ -1,6 +1,6 @@
-import React from "react";
+import Notes from "./Notes";
 
-const home = () => {
+const Home = () => {
   return (
     <>
       <div className="container my-3">
@@ -41,11 +41,9 @@ const home = () => {
           </button>
         </form>
       </div>
-      <div className="container">
-        <h2>Your Notes</h2>
-      </div>
+      <Notes />
     </>
   );
 };
 
-export default home;
+export default Home;
