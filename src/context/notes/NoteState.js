@@ -4,7 +4,25 @@ import NoteContext from "./noteContext";
 const NoteState = (props) => {
   const notesInitial = [
     {
-      _id: "64c007021aba5ef4d0e71283",
+      _id: "64c00702s1aba5ef4d0e71283",
+      user: "64bffeb395a83d02f0919420",
+      title: "my Title",
+      description: "Please Wake up early",
+      tag: "personal",
+      Date: "2023-07-25T17:31:46.565Z",
+      __v: 0,
+    },
+    {
+      _id: "64c00702d1aba5ef4d0e71283",
+      user: "64bffeb395a83d02f0919420",
+      title: "my Title",
+      description: "Please Wake up early",
+      tag: "personal",
+      Date: "2023-07-25T17:31:46.565Z",
+      __v: 0,
+    },
+    {
+      _id: "64c00721aba5ef4d0e71283",
       user: "64bffeb395a83d02f0919420",
       title: "my Title",
       description: "Please Wake up early",
@@ -22,7 +40,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "64c007021aba5ef4d0e71283",
+      _id: "64c0070det21aba5ef4d0e71283",
       user: "64bffeb395a83d02f0919420",
       title: "my Title",
       description: "Please Wake up early",
@@ -31,7 +49,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "64c007021aba5ef4d0e71283",
+      _id: "64c0070s21aba5ef4d0e71283",
       user: "64bffeb395a83d02f0919420",
       title: "my Title",
       description: "Please Wake up early",
@@ -40,7 +58,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "64c007021aba5ef4d0e71283",
+      _id: "64ca007021aba5ef4d0e71283",
       user: "64bffeb395a83d02f0919420",
       title: "my Title",
       description: "Please Wake up early",
@@ -49,25 +67,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "64c007021aba5ef4d0e71283",
-      user: "64bffeb395a83d02f0919420",
-      title: "my Title",
-      description: "Please Wake up early",
-      tag: "personal",
-      Date: "2023-07-25T17:31:46.565Z",
-      __v: 0,
-    },
-    {
-      _id: "64c007021aba5ef4d0e71283",
-      user: "64bffeb395a83d02f0919420",
-      title: "my Title",
-      description: "Please Wake up early",
-      tag: "personal",
-      Date: "2023-07-25T17:31:46.565Z",
-      __v: 0,
-    },
-    {
-      _id: "64c01f19e5907357a1ad9d12",
+      _id: "64c019e5907357a1ad9d12",
       user: "64bffeb395a83d02f0919420",
       title: "my Title",
       description: "Plee Wake up ear",
@@ -76,7 +76,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "64c158b37ba273cc6a62f47e",
+      _id: "6158b37ba273cc6a62f47e",
       user: "64bffeb395a83d02f0919420",
       title: "my Title",
       description: "Plee Wake ear",
