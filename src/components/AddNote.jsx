@@ -35,7 +35,7 @@ const AddNote = () => {
             id="title"
             name="title"
             aria-describedby="emailHelp"
-            value={note.title}
+            value={note.tit}
             minLength={5}
             required
             onChange={onChange}
@@ -57,13 +57,18 @@ const AddNote = () => {
         <div className="form-group">
           <label htmlFor="description">Tag</label>
           <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
+            type="text"
+            className="form-control"
+            id="tag"
+            name="tag"
+            onChange={onChange}
+            value={note.tag}
+       
           />
         </div>
-        <button type="submit" className="btn btn-primary" onClick={handleClick}>
-         Add Note
+
+        <button disabled = {note.title.length < 5 || note.description.length < 5} type="submit" className="btn btn-primary" onClick={handleClick}>
+          Add Note
         </button>
       </form>
     </div>
