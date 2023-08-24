@@ -42,9 +42,10 @@ const Signup = (props) => {
 
 
   return (
-    <div className="container">
+    <div className="container mt-3">
+      <h2 className="my-3">Signup to continue with Cloud-Notebook</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="form-group my-3">
           <label htmlFor="name">Name</label>
           <input
             type="text"
