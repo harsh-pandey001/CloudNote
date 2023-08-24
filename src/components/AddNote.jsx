@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import noteContext from "../context/notes/noteContext";
 
-const AddNote = () => {
+const AddNote = (props) => {
   const context = useContext(noteContext);
   const { addNote } = context;
 
@@ -18,6 +18,7 @@ const AddNote = () => {
       description: "",
       tag: "",
     })
+    props.showalert("Note Added Successfully", "success");
   };
 
   const onChange = (e) => {
@@ -35,7 +36,7 @@ const AddNote = () => {
             id="title"
             name="title"
             aria-describedby="emailHelp"
-            value={note.tit}
+            value={note.title}
             minLength={5}
             required
             onChange={onChange}
