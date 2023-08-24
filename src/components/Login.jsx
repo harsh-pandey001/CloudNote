@@ -25,7 +25,7 @@ const Login = (props) => {
     if (json.success) {
       //Save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
-      props.showalert("Loged in  Successfully","success");
+      props.showalert("Logged in  Successfully","success");
       history.push("/");
     } else {
       props.showalert("Invalid Details", "danger");
@@ -35,10 +35,10 @@ const Login = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="mt-3">
-      <h2>Login to continue with CloudNote book</h2>
+    <div className="my-3">
+      <h2 className="my-3">Login to continue with CloudNote book</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="form-group my-3">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"

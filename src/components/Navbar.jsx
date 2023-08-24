@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="/">iNotebook</Link>
+    <Link className="navbar-brand" to="/"> <i className="fa-solid fa-cloud fa-spin fa-spin-reverse mx-1"  style={{color: "#0571ff"}}></i>CloudNote</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
