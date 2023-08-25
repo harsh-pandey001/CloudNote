@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+
 import Notes from "./Notes";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 
 const Home = (props) => {
   const {showalert} = props;
